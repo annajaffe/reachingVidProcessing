@@ -6,6 +6,7 @@ import sys
 import h5py
 import numpy as np
 from moviepy.editor import VideoFileClip
+import os
 
 def main():
   if len(sys.argv) > 1:
@@ -19,11 +20,17 @@ def main():
   else:
     out_file = 'processed.h5'
 
+  # Set up path for saving the output .h5
+  baseFolder = baseFolder = r'C:\Users\SabatiniLab\Documents\GitHub\leap\videosAsH5'
+  if not os.path.exists(baseFolder):
+    os.makedirs(baseFolder)
+  savePath = os.path.join(baseFolder, out_file)
+
   # load in avi file
   clip = VideoFileClip(avi_file)
   w, h = clip.size
 
-  f = h5py.File(out_file, 'w')
+  f = h5py.File(savePath, 'w')
   # create the box dataset
   dataset = f.create_dataset('box', shape=(1, 1, *clip.size), dtype='u1', maxshape=(None, 1, *clip.size))
 

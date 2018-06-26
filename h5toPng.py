@@ -12,9 +12,9 @@ def main():
     new_fname = input_file[:-3] + '-image-{:08d}.png'
 
     # added AJ:
-    # Make a new folder in the LEAP folder that will save the resulting
+    # Make a new folder in the LEAP\resultsPng folder that will save the resulting
     # images as chosen from clustering
-    baseFolder = r'C:\Users\SabatiniLab\Documents\GitHub\leap' # need to put r in front for "raw string"
+    baseFolder = r'C:\Users\SabatiniLab\Documents\GitHub\leap\resultsPng' # need to put r in front for "raw string"
     savePath = os.path.join(baseFolder, input_file[:-3])
     if not os.path.exists(savePath):
         os.makedirs(savePath)
