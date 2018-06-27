@@ -23,7 +23,7 @@ def main():
 		if not out_file.endswith('avi'):
 			out_file += '.avi'
 	else:
-		out_file = 'concatVid_' + avi_top[-26:-16] + '.avi' # yyyy-mm-dd
+		out_file = 'stackVid_' + avi_top[-21:-11] + '.avi' # yyyy-mm-dd
 
 	# Load in avi files:
 	clip_top = VideoFileClip(avi_top)
