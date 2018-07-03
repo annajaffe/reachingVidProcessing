@@ -9,7 +9,7 @@ def main():
         input_file = sys.argv[1]
     else:
         raise Exception('Please provide an h5 filename')
-    new_fname = input_file[:-3] + '-img-{:06d}.png'
+    new_fname = input_file[:-3] + '-img-{:04d}.png'
 
     # added AJ:
     # Make a new folder in the LEAP\resultsPng folder that will save the resulting

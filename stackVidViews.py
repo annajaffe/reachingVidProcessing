@@ -32,7 +32,7 @@ def main():
 
 	# Stack videos and save:
 	final_clip = clips_array([[clip_top], [clip_bottom]])
-	final_clip.write_videofile(out_file, codec='rawvideo') # write as .avi
+	final_clip.write_videofile(out_file, codec='png') # write as .avi
 
 if __name__ == '__main__':
     main()

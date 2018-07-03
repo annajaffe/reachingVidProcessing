@@ -34,7 +34,7 @@ def main():
 
 	# Concatenate clips to make final video
 	video = concatenate_videoclips(clips, method='chain')
-	video.write_videofile(out_file, codec='rawvideo')
+	video.write_videofile(out_file, codec='png')
 	
 if __name__ == '__main__':
     main()
