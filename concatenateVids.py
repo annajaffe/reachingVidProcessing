@@ -26,6 +26,8 @@ def main():
 	# Get list of filenames, in order (0000, 0001, ...)
 	clips = []
 	splitVidNames = [filename for filename in os.listdir('.') if filename.startswith(avi_basename)]
+	if out_file in splitVidNames:
+		raise RuntimeError('The concatenated video already exists!')
 
 	print('Concatenating videos: \n' + "\n".join(str(x) for x in splitVidNames))
 

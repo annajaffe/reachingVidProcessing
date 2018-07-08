@@ -9,6 +9,7 @@ specify an output filename.
 from skimage.io import imsave
 import sys
 from moviepy.editor import VideoFileClip, clips_array
+import os
 
 # Movies are saved in the following folder: C:\Users\SabatiniLab\Desktop\CameraVids
 
@@ -24,6 +25,8 @@ def main():
 			out_file += '.avi'
 	else:
 		out_file = 'stackVid_' + avi_top[-21:-11] + '.avi' # yyyy-mm-dd
+	if out_file in os.listdir('.'):
+		raise RuntimeError('The stacked video already exists!')
 
 	# Load in avi files:
 	clip_top = VideoFileClip(avi_top)
